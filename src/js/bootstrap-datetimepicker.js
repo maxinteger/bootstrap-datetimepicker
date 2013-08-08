@@ -266,16 +266,16 @@
       offset.top = offset.top + this.height;
 
       var $window = $(window);
-      
+
       if ( this.options.width != undefined ) {
         this.widget.width( this.options.width );
       }
-      
+
       if ( this.options.orientation == 'left' ) {
         this.widget.addClass( 'left-oriented' );
         offset.left   = offset.left - this.widget.width() + 20;
       }
-      
+
       if (this._isInFixed()) {
         position = 'fixed';
         offset.top -= $window.scrollTop();
@@ -470,7 +470,7 @@
           html += '<tr>';
           for (var j = 0; j < 4; j += 1) {
              var c = current.toString();
-             html += '<td class="hour">' + padLeft(c, 2, '0') + '</td>';
+             html += '<td class="hour">' + padLeft(c, 2, '0') + ':00</td>';
              current++;
           }
           html += '</tr>'
@@ -481,7 +481,7 @@
           html += '<tr>';
           for (var j = 0; j < 4; j += 1) {
              var c = current.toString();
-             html += '<td class="hour">' + padLeft(c, 2, '0') + '</td>';
+             html += '<td class="hour">' + padLeft(c, 2, '0') + ':00</td>';
              current++;
           }
           html += '</tr>'
@@ -496,12 +496,12 @@
       table.parent().hide();
       var html = '';
       var current = 0;
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 4; i++) {
         html += '<tr>';
-        for (var j = 0; j < 4; j += 1) {
+        for (var j = 0; j < 3; j += 1) {
           var c = current.toString();
           html += '<td class="minute">' + padLeft(c, 2, '0') + '</td>';
-          current += 3;
+          current += 5;
         }
         html += '</tr>';
       }
@@ -514,12 +514,12 @@
       table.parent().hide();
       var html = '';
       var current = 0;
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 4; i++) {
         html += '<tr>';
-        for (var j = 0; j < 4; j += 1) {
+        for (var j = 0; j < 3; j += 1) {
           var c = current.toString();
           html += '<td class="second">' + padLeft(c, 2, '0') + '</td>';
-          current += 3;
+          current += 5;
         }
         html += '</tr>';
       }
